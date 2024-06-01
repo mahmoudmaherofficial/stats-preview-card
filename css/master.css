@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "Inter";
+  src: url(../fonts/Inter-Variable.ttf);
+}
+@font-face {
+  font-family: "LexendDeca";
+  src: url(../fonts/LexendDeca-Variable.ttf);
+}
+:root {
+  --Very-dark-blue-main-background: hsl(233, 47%, 7%);
+  --Dark-desaturated-blue-card-background: hsl(244, 38%, 16%);
+  --Soft-violet-accent: hsl(277, 64%, 61%);
+  --White-main-heading-stats: hsl(0, 0%, 100%);
+  --Slightly-transparent-white-main-paragraph: hsla(0, 0%, 100%, 0.75);
+  --Slightly-transparent-white-stat-headings: hsla(0, 0%, 100%, 0.6);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter";
+  font-size: 15px;
+  overflow: hidden;
+  min-height: 100vh;
+  background-color: var(--Very-dark-blue-main-background);
+}
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .card {
+  background-color: var(--Dark-desaturated-blue-card-background);
+  display: flex;
+  max-width: 1100px;
+  flex-direction: row;
+  max-height: auto;
+}
+main .card .image {
+  position: relative;
+  height: 100%;
+}
+main .card .image img {
+  max-height: 100%;
+  display: block;
+  filter: contrast(150%);
+}
+.image::before {
+  content: "";
+  position: absolute;
+  background-color: hsla(277, 80%, 61%, 0.6);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+main .card .content {
+  padding: 50px 100px 50px 50px;
+  color: var(--White-main-heading-stats);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .card .content .tittle {
+  font-size: 32px;
+  margin: 0;
+}
+main .card .content .tittle span {
+  color: var(--Soft-violet-accent);
+}
+main .card .content .des {
+  margin: 20px 0;
+}
+main .card .content .insights {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+}
+.content p {
+  font-family: "LexendDeca";
+  font-weight: 200;
+  color: var(--Slightly-transparent-white-main-paragraph);
+
+  line-height: 1.6;
+}
+main .card .content .insights .item p {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+@media (max-width: 930px) {
+  body {
+    overflow: auto;
+  }
+  main .card {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  main .card .content .insights {
+    flex-direction: column;
+    align-content: space-between;
+    width: 100%;
+  }
+  main .card .content {
+    align-items: center;
+    padding: 0;
+  }
+}
